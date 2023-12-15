@@ -8,12 +8,12 @@ const { Node } = require('../extensions/list-tree.js');
 */
 class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.roote = null;
   }
 
   root() {
     // throw new NotImplementedError('Not implemented');
-    return this.root;
+    return this.roote;
   }
 
   add(data) {
@@ -21,7 +21,7 @@ class BinarySearchTree {
     // if (data === undefined || data === null) {
     //   throw new Error("Data cannot be null or undefined");
     // }
-    this.root = addWithinTheTree(this.root, data);
+    this.roote = addWithinTheTree(this.roote, data);
     function addWithinTheTree(node, data) {
       if (!node) {
         return new Node(data);
@@ -40,7 +40,7 @@ class BinarySearchTree {
 
   has(data) {
     // throw new NotImplementedError('Not implemented');
-    return searchWithinTheTree(this.root, data);
+    return searchWithinTheTree(this.roote, data);
     function searchWithinTheTree(node, data) {
       if (!node) {
         return false;
@@ -49,15 +49,15 @@ class BinarySearchTree {
         return true;
       }
       if (data < node.data) {
-        return addWithinTheTree(node.left, data);
+        return searchWithinTheTree(node.left, data);
       } else {
-        return addWithinTheTree(node.right, data);
+        return searchWithinTheTree(node.right, data);
       }
     }
   }
 
   find(data) {
-    return findWithinTheTree(this.root, data);
+    return findWithinTheTree(this.roote, data);
     // throw new NotImplementedError('Not implemented');
     function findWithinTheTree(node, data) {
       if (!node) {
@@ -74,7 +74,7 @@ class BinarySearchTree {
 
   remove(data) {
     // throw new NotImplementedError('Not implemented');
-    this.root = removeWithinTheTree(this.root, data);
+    this.roote = removeWithinTheTree(this.roote, data);
     function removeWithinTheTree(node, data) {
       if (!node) {
         return null;
@@ -110,22 +110,21 @@ class BinarySearchTree {
   }
   min() {
     // throw new NotImplementedError('Not implemented');
-    if (!this.root) {
+    if (!this.roote) {
       return;
     }
-    let node = this.root;
+    let node = this.roote;
     while (node.left) {
       node = node.left;
     }
     return node.data;
   }
-
   max() {
     // throw new NotImplementedError('Not implemented');
-    if (!this.root) {
+    if (!this.roote) {
       return;
     }
-    let node = this.root;
+    let node = this.roote;
     while (node.right) {
       node = node.right;
   }
