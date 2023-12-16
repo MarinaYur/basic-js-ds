@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let list = {
+        value: 3,
+        next: {
+          value: 1,
+          next: {
+            value: 2,
+            next: {
+              value: 3,
+              next: {
+                value: 4,
+                next: {
+                  value: 5,
+                  next: null,
+                },
+              },
+            },
+          },
+        },
+      };
+
+      class ListNode {
+        constructor(x) {
+          this.value = x;
+          this.next = null;
+        }
+      }
+      console.log("hello");
+      let k = 3;
+
+      function removeKFromList(l, k) {
+        // throw new NotImplementedError('Not implemented');
+        if (!l) return null;
+        let prev = null;
+        let current = l;
+
+        while (current) {
+          if (current.value === k) {
+            if(prev) {
+              prev.next = current.next;
+            } else {
+              l.value = l.next.value;
+              l.next = l.next.next;
+            }
+            current = current.next;
+            continue;
+          }
+          prev = current;
+          current = current.next;
+       
+      }  console.log("list", l);
+    }
+        //   console.log(list.value);
+          // list = list.next;
+          //   // current = current.next;
+          // if (list.value === k) {
+          //   list.value = list.next.value;
+          //   list.next = list.next.next;
+          //   console.log("list.value", list.value);
+          // }
+          // list = list.next;
+        // }
+        // return list.next;
+        // console.log("list", list);
+        // let current = queue;
+        // console.log('current', current);
+        //     while(current.next !== null) {
+        //         current.next.value === k
+        //   ? current.next = current.next.next
+        //   : current = current.next;
+        //         console.log('current.next', current.next);
+        //         // console.log('current.next.value', current.next.value);
+        //     }
+        // console.log('current', current);
+      // }
+      removeKFromList(list, k);
+    </script>
+  </body>
+</html>
+
+// let current = this.head;
+// let prev = null;
+// while (current) {
+//   prev = current;
+//   current = current.next;
+//   if (current.value === k) {
+//     current.value = current.next.value;
+//   }
+// } 
