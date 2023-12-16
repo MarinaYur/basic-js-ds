@@ -44,6 +44,7 @@
         let current = l;
 
         while (current) {
+          console.log(current);
           if (current.value === k) {
             if(prev) {
               prev.next = current.next;
@@ -52,36 +53,12 @@
               l.next = l.next.next;
             }
             current = current.next;
-            continue;
           }
           prev = current;
           current = current.next;
        
       }  console.log("list", l);
     }
-        //   console.log(list.value);
-          // list = list.next;
-          //   // current = current.next;
-          // if (list.value === k) {
-          //   list.value = list.next.value;
-          //   list.next = list.next.next;
-          //   console.log("list.value", list.value);
-          // }
-          // list = list.next;
-        // }
-        // return list.next;
-        // console.log("list", list);
-        // let current = queue;
-        // console.log('current', current);
-        //     while(current.next !== null) {
-        //         current.next.value === k
-        //   ? current.next = current.next.next
-        //   : current = current.next;
-        //         console.log('current.next', current.next);
-        //         // console.log('current.next.value', current.next.value);
-        //     }
-        // console.log('current', current);
-      // }
       removeKFromList(list, k);
     </script>
   </body>
